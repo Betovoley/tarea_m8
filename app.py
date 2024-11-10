@@ -4,29 +4,25 @@ import pandas as pd
 from PIL import Image
 
 def main():
-    st.title("Trabajando con multimedia")
+    st.title("Trabajando con controles de ingreso de datos")
 
-    img = Image.open("imagenes/camiseta.png")
-    st.image(img, use_container_width=True)
+    nombre = st.text_input('Ingrese su nombre')
+    st.write(nombre)
 
-    img1="https://upload.wikimedia.org/wikipedia/pt/6/67/SadaCruzeiro2021.png"
-    st.image(img1, use_container_width=True)
+    mensaje = st.text_area('Ingrese su mensaje', height=100)
+    st.write(mensaje)
 
-    with open('Videos/yo.mp4', 'rb') as video_file:
-        st.video(video_file, start_time=0)
+    edad = st.number_input('Ingrese su edad', 1,100, step=1)
+    st.write(edad)
 
-    with open('Musica/we are the champions.mp3', 'rb') as audio_file:
-        st.audio(audio_file, start_time=0)
+    fecha = st.date_input('Ingrese su fecha de nacimiento')
+    st.write(fecha)
 
-    st.html(
-    "<p><span style='text-decoration: line-through double red;'>Esta funcionando</span>!</p>"
+    hora = st.time_input('Ingrese la hora')
+    st.write(hora)
 
-    
-)
-
-
-    
-
+    color = st.color_picker('seleccione un color')
+    st.write(color)
 
 if __name__ == "__main__":
     main()
